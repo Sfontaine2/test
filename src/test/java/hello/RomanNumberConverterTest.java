@@ -22,7 +22,7 @@ public class RomanNumberConverterTest{
     @Test
     public void check_soustra(){
         assertThat(romanNumberConverter.convert("IV"))
-            .isEqualTo(4);
+            .isEqualTo(5);
         assertThat(romanNumberConverter.convert("IX"))
             .isEqualTo(9);
         assertThat(romanNumberConverter.convert("IM"))
