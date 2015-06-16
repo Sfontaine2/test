@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="hello.RomanNumberConverterTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2015-06-16T12:55:23" hostname="tc405-109-09.insa-lyon.fr" time="0.005">
+  <properties/>
+  <testcase name="check_soustra" classname="hello.RomanNumberConverterTest" time="0.004"/>
+  <testcase name="check" classname="hello.RomanNumberConverterTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

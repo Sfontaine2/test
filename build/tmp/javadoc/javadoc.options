@@ -1,0 +1,6 @@
+-classpath '/home/sfontaine2/Documents/MGL/TP2/roman-numbers/build/classes/main:/home/sfontaine2/Documents/MGL/TP2/roman-numbers/build/resources/main'
+-d '/home/sfontaine2/Documents/MGL/TP2/roman-numbers/build/docs/javadoc'
+-doctitle 'roman-numbers API'
+-quiet 
+-windowtitle 'roman-numbers API'
+'/home/sfontaine2/Documents/MGL/TP2/roman-numbers/src/main/java/hello/Hello.java'

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>RomanNumberConverter.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">roman-numbers</a> &gt; <a href="index.source.html" class="el_package">hello</a> &gt; <span class="el_source">RomanNumberConverter.java</span></div><h1>RomanNumberConverter.java</h1><pre class="source lang-java linenums">package hello;
+
+<span class="fc" id="L3">public class RomanNumberConverter{</span>
+   
+    public int convert(String romanNumber){
+<span class="fc" id="L6">        int counter = 0;</span>
+<span class="fc bfc" id="L7" title="All 2 branches covered.">        for(int i = 0; i &lt; romanNumber.length(); i++){</span>
+			 
+<span class="fc bfc" id="L9" title="All 2 branches covered.">			if(i!=romanNumber.length()-1){</span>
+<span class="pc bpc" id="L10" title="6 of 8 branches missed.">				switch (romanNumber.charAt(i)){</span>
+					case 'M':
+<span class="nc" id="L12">						counter=counter+1000;</span>
+<span class="nc" id="L13">					break;</span>
+				   
+					case 'D':
+<span class="nc bnc" id="L16" title="All 2 branches missed.">						if(romanNumber.charAt(i+1)=='M'){</span>
+<span class="nc" id="L17">							counter = counter-500;</span>
+						} else {
+<span class="nc" id="L19">							counter = counter+500;</span>
+						}
+<span class="nc" id="L21">					break;</span>
+				   
+					case 'C':
+<span class="nc bnc" id="L24" title="All 4 branches missed.">						if(romanNumber.charAt(i+1)=='M'||romanNumber.charAt(i+1)=='D'){</span>
+<span class="nc" id="L25">							counter = counter-100;</span>
+						} else {
+<span class="nc" id="L27">							counter = counter+100;</span>
+						}
+<span class="nc" id="L29">					break;</span>
+				   
+					case 'L':
+<span class="nc bnc" id="L32" title="All 6 branches missed.">						if((romanNumber.charAt(i+1)=='M')||(romanNumber.charAt(i+1)=='D')||(romanNumber.charAt(i+1)=='C')){</span>
+<span class="nc" id="L33">							counter = counter-50;</span>
+						} else {
+<span class="nc" id="L35">							counter = counter+50;</span>
+						}
+<span class="nc" id="L37">					break;</span>
+				   
+					case 'X':
+<span class="nc bnc" id="L40" title="All 8 branches missed.">						if(romanNumber.charAt(i+1)=='M'||romanNumber.charAt(i+1)=='D'||romanNumber.charAt(i+1)=='C'||romanNumber.charAt(i+1)=='L'){</span>
+<span class="nc" id="L41">							counter = counter-10;</span>
+						} else {
+<span class="nc" id="L43">							counter = counter+10;</span>
+						}
+<span class="nc" id="L45">					break;</span>
+				   
+					case 'V':
+<span class="pc bpc" id="L48" title="5 of 10 branches missed.">						if(romanNumber.charAt(i+1)=='M'||romanNumber.charAt(i+1)=='D'||romanNumber.charAt(i+1)=='C'||romanNumber.charAt(i+1)=='L'||romanNumber.charAt(i+1)=='X'){</span>
+<span class="fc" id="L49">							counter = counter-5;</span>
+						} else {
+<span class="nc" id="L51">							counter = counter+5;</span>
+						}
+<span class="nc" id="L53">					break;</span>
+				   
+					case 'I':
+<span class="pc bpc" id="L56" title="4 of 12 branches missed.">						if((romanNumber.charAt(i+1)=='M')||(romanNumber.charAt(i+1)=='D')||(romanNumber.charAt(i+1)=='C')||(romanNumber.charAt(i+1) =='L')||(romanNumber.charAt(i+1)=='X')||(romanNumber.charAt(i+1)=='V')){</span>
+<span class="fc" id="L57">							counter = counter-1;</span>
+						} else {
+<span class="nc" id="L59">							counter = counter+1;</span>
+						}
+<span class="nc" id="L61">					break;</span>
+					default :
+<span class="nc" id="L63">						System.err.println(&quot;t'es con ou quoi?&quot;);</span>
+<span class="nc" id="L64">					break;</span>
+				}
+			}else{
+<span class="pc bpc" id="L67" title="5 of 8 branches missed.">				switch (romanNumber.charAt(i)){</span>
+					case 'M':
+<span class="fc" id="L69">						counter=counter+1000;</span>
+<span class="fc" id="L70">					break;</span>
+				   
+					case 'D':
+<span class="nc" id="L73">							counter = counter+500;</span>
+<span class="nc" id="L74">					break;</span>
+				   
+					case 'C':
+<span class="nc" id="L77">							counter = counter+100;</span>
+<span class="nc" id="L78">					break;</span>
+				   
+					case 'L':
+<span class="nc" id="L81">						counter = counter+50;</span>
+<span class="nc" id="L82">					break;</span>
+				   
+					case 'X':
+<span class="fc" id="L85">						counter = counter+10;</span>
+<span class="fc" id="L86">					break;</span>
+				   
+					case 'V':
+<span class="fc" id="L89">						counter = counter+5;</span>
+<span class="fc" id="L90">					break;</span>
+				   
+					case 'I':
+<span class="nc" id="L93">						counter = counter+1;</span>
+<span class="nc" id="L94">					break;</span>
+					
+					default :
+<span class="nc" id="L97">						System.err.println(&quot;t'es con ou quoi?&quot;);</span>
+					break;
+				}
+				
+			}
+        
+		}
+<span class="fc" id="L104">		return counter;</span>
+	}
+   
+    public String convert(int number){
+<span class="nc" id="L108">        return &quot;caca&quot;;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>
